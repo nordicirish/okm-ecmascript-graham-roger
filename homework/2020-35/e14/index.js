@@ -38,7 +38,7 @@ function main() {
   let arrayIndex;
 
   while (true) {
-    //wrap the switch in while true so break statements exit the loop rather than the whole program
+    //wrap the switch in while true so break exits the switch statement rather than the whole program
     switch (index) {
       case (index = 0):
         userName = readlineSync.question("May I have a student name? ");
