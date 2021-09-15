@@ -2,10 +2,10 @@ let database = [];
 let user = "";
 let key = 1;
 let userName = "";
-// let user = { id: key, nameStudent: "" };
+
 function add(userName) {
-  user = userName;
   user = { id: key, nameStudent: userName };
+  // console.log(user);
   database.push(user);
   key++;
 }
