@@ -1,36 +1,46 @@
-var a = 10; // globally scoped var a
+var i = 5;
 function testVar() {
-  //functionally scoped var a is hoisted to top - undefiined value as value remains below
-  console.log("a is " + a); // output undefined - value is not hoisted from below with the variable
-  var a = 20; // functionally scoped var a - var allows two different variables to have the same name
-  console.log("a is " + a); // output 20
+  for (var i = 0; i < 3; i++) {
+    //two variables of the same name can be declared using var
+    console.log("i is", i);
+  }
+  try {
+    console.log("i is", i); //var values can be changed  and are functually scoped or globally scoped
+  } catch (error) {
+    // i can be accessed outside the block it was declared in .. will fail if let is used
+    console.error(error);
+  }
 }
-testVar();
-console.log("a is " + a); //output 10 - globally scoped var value
+try {
+  console.log(" Global i is " + i); //output 5 - globally scoped var value
+} catch (error) {
+  console.error(error);
+}
 
-// let is block scoped
+testVar();
+
+// let values can be changed but let is block scoped
 function testLet() {
-  for (let i = 0; i < 3; i++) {
-    console.log(i);
+  for (let z = 0; z < 3; z++) {
+    console.log("z is ", z);
+  }
+  try {
+    console.log("z is ", z); // fails because access is outside the code block
+  } catch (error) {
+    console.error("Let can't be accessed outside its block scope ", error);
   }
 }
 
 testLet();
-// can't be referenced oustside the block
-try {
-  console.log(i);
-} catch (error) {
-  console.error(error);
-}
 
 function testConst() {
   const c = 10;
   console.log("c is " + c); //c is 10
   c = 20;
   try {
-    console.log("c is " + c); //Uncaught TypeError: Assignment to constant variable -- const values cannot be changed.
+    console.log("c is " + c);
   } catch (error) {
-    console.error(error);
+    console.error("Const values can't be changed", error);
   }
 }
 testConst();
