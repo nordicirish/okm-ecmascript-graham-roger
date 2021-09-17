@@ -1,6 +1,6 @@
 function stringFormats() {
   let x = "hello";
-  let y = "hello";
+  let y = "'hell0'";
   let z = `hello`;
   let yourBill = "20";
   let a = x + " John your discounted bill is ${yourBill * 0.8} euros";
