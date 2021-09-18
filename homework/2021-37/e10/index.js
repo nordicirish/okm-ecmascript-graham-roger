@@ -20,7 +20,7 @@ const remove = () => {
 };
 // filter creates a new array with onject that match the criteria (must not match the name entered)
 const display = () => {
-  console.log("People in the database");
+  console.log("People in the database now");
   {
     people.forEach((person) => console.log(person.name)); //anonymous function iterates through the array using forEach and outputs each name
   }
@@ -30,7 +30,7 @@ const main = () => {
   let choices = ["Add", "Remove", "Display"];
   let index = 1;
   while (index != -1) {
-    // switch statements are inside a loop statement to stop the break statments from making the main function exit
+    // switch statements are inside a loop statement to stop the break statements from making the main function exit
     index = readlineSync.keyInSelect(choices, "Choice?");
     switch (index) {
       case 0:
