@@ -7,12 +7,13 @@ const part2 = () =>
     let characters = [];
     people.forEach((person) => characters.push(person.name));
     {
-      console.log("<ul>");
-      characters = characters
-        .map((character) => "<li>" + character + "</li>")
-        .join(""); //remove quotes
-      console.log(characters);
-      console.log("</ul>");
+      console.log(`<ul>`);
+      characters = characters.map(
+        (
+          character //use map and template literals to add li tags
+        ) => console.log(`<li>${character}</li>`)
+      );
+      console.log(`</ul>`);
     }
     // output();
   });
