@@ -21,8 +21,6 @@ const copy = (file1, file2, callback) => {
     }
   });
 };
-copy(
-  args1,
-  args2,
-  (result) => (result = true ? console.log("success") : console.log("error"))
+copy(args1, args2, (result) =>
+  result == true ? console.log("success") : console.log("error")
 );
