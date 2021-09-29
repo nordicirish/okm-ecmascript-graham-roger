@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML5 Page</title>
+  </head>
+  <body>
+    <script>
+      console.log(this);
+      console.log(this);
+      var x = 5;
+      console.log(this == window);
+      this.y = 6;
+
+      window.z = 9;
+      this.key1 = "donald duck";
+      window.key2 = "mickey mouse";
+      var key3 = "uncle scrooge";
+      console.log(window.x);
+      console.log(window.y);
+      console.log(window.z);
+
+      for (let key in window) {
+        document.write(key + " = ");
+        document.write(window[key] + "<br>");
+      }
+    </script>
+  </body>
+</html>
