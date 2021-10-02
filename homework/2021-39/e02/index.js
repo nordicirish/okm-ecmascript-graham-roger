@@ -47,6 +47,7 @@ makeCalculation(10, 5)
 
 // catch-function is called if one of the promises invokes the reject function. Now implement the
 // makeCalculation so that you cannot make division with 0.
+// & sendStuffToBackEnd if random number is 0
 
 // PS C:\Users\roger\OneDrive\Documents\GitHub\okm-ecmascript-graham-roger\homework\20221-39\e02> node index.js
 // calculating stuff
