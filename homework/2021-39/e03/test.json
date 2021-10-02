@@ -1,5 +1,6 @@
 
-{  "name": "promises",
+{ "key" :"001",
+  "name": "promises",
   "dependencies": {
     "readline-sync": "^1.4.10"
   }
