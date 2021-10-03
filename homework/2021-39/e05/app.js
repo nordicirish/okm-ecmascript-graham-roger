@@ -13,8 +13,8 @@ readFile(fileName, "utf-8")
   .catch((msg) => console.log(msg));
 
 function parseJson(data) {
-  const obj = JSON.parse(data);
   function func(resolve, reject) {
+    const obj = JSON.parse(data);
     if ("name" in obj) {
       resolve(data);
     } else {
