@@ -1,0 +1,6 @@
+{
+  "name": "promises",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
