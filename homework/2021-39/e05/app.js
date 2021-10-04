@@ -1,16 +1,14 @@
-let readlineSync = require("readline-sync");
+// Move require to top
+const fs = require("fs");
+const readlineSync = require("readline-sync");
+const util = require("util");
+const readFile = util.promisify(fs.readFile); // read file now a promise
+
+// not needed
+// const { resolveMx } = require("dns");
+
 // Wait for user's response.
 let fileName = readlineSync.question("Give file name? ");
-//   console.log("The file name is " + fileName);
-const util = require("util");
-const fs = require("fs");
-const { resolveMx } = require("dns");
-const readFile = util.promisify(fs.readFile); // read file now a promise
-readFile(fileName, "utf-8")
-  .then((data) => console.log(data))
-  .then(parseJson)
-  .then((name) => console.log(name))
-  .catch((msg) => console.log(msg));
 
 function parseJson(data) {
   function func(resolve, reject) {
@@ -27,3 +25,9 @@ function parseJson(data) {
   const p = new Promise(func);
   return p;
 }
+
+// first read, then parse. If parsing fails it will go to the catch
+readFile(fileName, "utf-8")
+  .then(parseJson)
+  .then((name) => console.log(name))
+  .catch((msg) => console.log("error handling here " + msg));
