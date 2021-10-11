@@ -24,5 +24,8 @@ async function fetchTitle() {
   return title;
 }
 
-fetchName().then((name) => console.log(`Character name: ${name}`));
-fetchTitle().then((title) => console.log(`First film: ${title}`));
+function main() {
+  fetchName().then((name) => console.log(`Character name: ${name}`));
+  fetchTitle().then((title) => console.log(`First film: ${title}`));
+}
+main();
