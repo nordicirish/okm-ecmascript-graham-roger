@@ -1,15 +1,14 @@
-//readline synch has a problem throws errors with modules so using node command line input node app.js 1
+import readlineSync from "readline-sync"; //module import
 import fetch from "node-fetch";
-const getUserInput = () => {
-  let input = process.argv.splice(2); // [], ["1"] remove node and app.js
-  return input.length === 0 ? null : input[0];
-};
+let id = readlineSync.question("May I have a number?\n");
 
-let id = getUserInput();
-let hr = await fetch(`https://swapi.dev/api/people/${id}/`);
-let data = await hr.json();
-
+async function fetchData() {
+  let hr = await fetch(`https://swapi.dev/api/people/${id}/`);
+  let data = await hr.json();
+  return data;
+}
 async function fetchName() {
+  let data = await fetchData();
   let name = await data.name;
   return name;
 }
@@ -22,11 +21,12 @@ async function fetchTitle(film) {
   return filmTitle;
 }
 
-async function loopFilms() {
+async function fetchAllFilms() {
+  let data = await fetchData();
   let films = await data.films;
   films.forEach(async (film) => {
     let title = await fetchTitle(film);
-    console.log(title);
+    await console.log(title); // if no await films are output in random order
   });
 }
 
@@ -36,7 +36,7 @@ async function loopFilms() {
 // them gets rejected
 
 async function main() {
-  Promise.all([fetchName(), loopFilms()])
+  Promise.all([fetchName(), fetchAllFilms()])
     .then(([result]) => {
       console.log(result);
     })
