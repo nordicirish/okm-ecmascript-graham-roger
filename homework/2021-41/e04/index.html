@@ -1,0 +1,43 @@
+<!-- ! and hit tab to create html 5 boilerplate -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.addEventListener("load", ready);
+      // prevents eventlistener firing until page elements have fully loaded
+      function ready() {
+        let button = document.querySelector("button");
+        button.addEventListener("click", doIt1);
+        button.addEventListener("click", doIt2);
+      }
+
+      function doIt1() {
+        let rNumber1 = (Math.random() * 100).toFixed(0);
+        // toFixed specifies number of zeroes after decimal point
+        alert("1st Random number is " + rNumber1);
+      }
+      function doIt2() {
+        let rNumber2 = (Math.random() * 10).toFixed(0);
+        // toFixed specifies number of zeroes after decimal point
+        alert("2nd Random number is " + rNumber2);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Exercise 04</h1>
+    <button>Random number</button>
+    <p>
+      Create web page with a simple button. When button is pressed, display in a
+      alert with random floating point number (Math.random()) use
+      addEventListener
+    </p>
+    <p>
+      Modify the previous so that the button has two listener functions. The
+      other will display an alert with random integer number between 1 - 10.
+    </p>
+  </body>
+</html>

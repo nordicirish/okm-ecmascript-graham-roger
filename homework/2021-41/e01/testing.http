@@ -1,0 +1,39 @@
+
+# GET https://swapi.dev/api/people/1/
+
+
+# GET https://swapi.dev/api/planets/
+
+# GET https://swapi.dev/api/people/2
+
+# fetch all locations
+#  GET http://localhost:8080/locations
+
+# #  fetch location with id 1 using curl GET works too
+# curl http://localhost:8080/locations/1
+
+# delete location with id 1
+#  delete http://localhost:8080/locations/1
+#  add a new location
+# POST  http://localhost:8080/locations/ 
+# Content-Type: application/json
+# // need a space before the object to work 
+# {
+#   "lat": 60,
+#   "lon": 80
+# }
+
+# Readme instuctions
+# curl http://localhost:8080/locations/
+# curl http://localhost:8080/locations/1
+# curl -X DELETE http://localhost:8080/locations/1
+# curl http://localhost:8080/locations/
+# Content-Type: application/json
+
+# { 
+#     "lat":65, 
+#     "lon":66 
+# } 
+
+
+# start server navigate to C:\GitHub\okm-ecmascript-graham-roger\homework\2021-41\eo1\restful-api-nodejs-master  folder and use node app.js 

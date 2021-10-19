@@ -18,23 +18,19 @@ async function fetchName(id) {
 
 async function fetchFilms(id) {
   let filmNames = await data.results[id - 1].films;
-
   return filmNames;
 }
 // fetchFilms();
 
 async function fetchFilmTitles(id) {
-  // await ids.forEach(async (id) => {
   let films = await fetchFilms(id);
-  await films.forEach(async (film) => {
-    let title = await fetchTitle(film);
+  let titleArray = await films.map(async (film) => {
+    const title = await fetchTitle(film);
     await console.log(title);
-    return title;
   });
-  // });
+  return titleArray;
 }
-
-// fetchFilmTitles();
+// await fetchFilmTitles(1);
 
 async function fetchTitle(film) {
   let filmIndex = film.charAt(film.length - 2); // last charcter is a backslash
@@ -44,6 +40,16 @@ async function fetchTitle(film) {
   let filmTitle = await filmData.title;
   return filmTitle;
 }
+async function makeArray() {
+  await ids.forEach(async (id) => {
+    let arrayOfObject = await fetchName(id).map(async function (value, index) {
+      console.log(arrayOfObject);
+      return [value, fetchFilmTitles(id)[index]];
+    });
+  });
+}
+
+console.log(makeArray());
 
 // results are output names first and then films even if warpped in forEach loop
 async function fetchAll() {
@@ -55,7 +61,7 @@ async function fetchAll() {
       .catch((error) => console.log(`Error in promises ${error}`));
   });
 }
-fetchAll();
+// fetchAll();
 
 // fetch all names
 // async function fetchNames() {
