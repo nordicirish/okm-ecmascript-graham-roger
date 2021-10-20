@@ -1,0 +1,97 @@
+<!-- ! and hit tab to create html 5 boilerplate -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .colorTable {
+        width: 100%;
+        height: 60rem;
+      }
+      .colorTable td {
+        border: 0.5rem solid;
+        border-radius: 1rem;
+        width: 20%;
+        height: 20%;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", ready);
+      // prevents eventlistener firing until page elements have fully loaded
+
+      function ready() {
+        //   rgb red green and blue values are 0 - 255
+        let red = (Math.random() * 255).toFixed(0);
+        let green = (Math.random() * 255).toFixed(0);
+        let blue = (Math.random() * 255).toFixed(0);
+        // all td elements in the page
+        let elementList = document.querySelectorAll("td");
+        // console.log(elementList);
+        for (let node of elementList) {
+          // loop through element list array and event listener to each node (td)
+          node.addEventListener("click", (event) => {
+            node.style.background = `rgb(${red},${green},${blue})`;
+            node.style.border = "none";
+            // console.log(node.style.background);
+          });
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Exercise 05</h1>
+    <table class="colorTable">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <p>
+      Create a HTML5 web page where you have a table size of 5 x 5. Define some
+      CSS to the table so that the width of the table could be 100% of parent
+      and height could be for example 500em/px. Add some borders to cells so you
+      can see them. Leave content blank.
+    </p>
+    <p>
+      Create functionality, when user clicks a cell of the table, it’s
+      background color changed to some random color. You could use
+      querySelectorAll to fetch all the td-elements and then iterate them to add
+      listeners.
+    </p>
+  </body>
+</html>
