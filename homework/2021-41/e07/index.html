@@ -1,0 +1,123 @@
+<!-- ! and hit tab to create html 5 boilerplate -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .colorTable {
+        width: 100%;
+        min-height: 90rem;
+      }
+      .colorTable td {
+        border: 0.5rem solid;
+        border-radius: 1rem;
+        /* width: 5rem;
+        height: 5rem; */
+      }
+      button {
+        margin: 1rem 0;
+        padding: 1rem;
+        font-size: 2rem;
+        height: 18rem;
+        width: 18rem;
+        border: none;
+        border-radius: 50%;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", ready);
+      // prevents eventlistener firing until page elements have fully loaded
+
+      function ready() {
+        let button = document.querySelector("button");
+        button.addEventListener("click", changeColor);
+        let elementList = document.querySelectorAll("td");
+        let nIntervId;
+        // loop through element list array and apply background colour to each node (td)
+
+        function changeColor() {
+          // check if already an interval has been set up
+          if (!nIntervId) {
+            nIntervId = setInterval(doIt, 1000);
+            // doIt callBack after 1 second interval
+          }
+        }
+        function doIt() {
+          // each cell gets the same color
+          // let red = (Math.random() * 255).toFixed(0);
+          // let green = (Math.random() * 255).toFixed(0);
+          // let blue = (Math.random() * 255).toFixed(0);
+          for (let node of elementList) {
+            //disco fever
+            let red = (Math.random() * 255).toFixed(0);
+            let green = (Math.random() * 255).toFixed(0);
+            let blue = (Math.random() * 255).toFixed(0);
+            // loop through elementList array
+            node.style.background = `rgb(${red},${green},${blue})`;
+            node.style.border = "none";
+            node.style.borderRadius = "50%";
+            button.innerText = "DISCO FEVER!";
+
+            button.style.background = `rgb(${red},${green},${blue})`;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Exercise 07</h1>
+    <button>Animate</button>
+    <table class="colorTable">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <p>
+      Create a HTML5 web page where you have a table size of 5 x 5. Define some
+      CSS to the table so that the width of the table could be 100% of parent
+      and height could be for example 500em/px. Add some borders to cells so you
+      can see them. Leave content blank.
+    </p>
+
+    <p>
+      Create second button “animate”. When pressed the cell colors will change
+      randomly in every second. Use setInterval.
+    </p>
+  </body>
+</html>
