@@ -16,14 +16,19 @@
       }
 
       function doIt1() {
-        let rNumber1 = (Math.random() * 100).toFixed(0);
-        // toFixed specifies number of zeroes after decimal point
+        //re-declare button
+        let button = document.querySelector("button");
+        let rNumber1 = Math.floor(Math.random() * 100) + 1;
+        // random no between 1 and 100
         alert("1st Random number is " + rNumber1);
+        button.removeEventListener("click", doIt1);
       }
       function doIt2() {
-        let rNumber2 = (Math.random() * 10).toFixed(0);
-        // toFixed specifies number of zeroes after decimal point
+        let button = document.querySelector("button");
+        let rNumber2 = Math.floor(Math.random() * 10) + 1;
+        // random no between 1 and 10
         alert("2nd Random number is " + rNumber2);
+        button.removeEventListener("click", doIt2);
       }
     </script>
   </head>
@@ -36,8 +41,8 @@
       addEventListener
     </p>
     <p>
-      Modify the previous so that the button has two listener functions. The
-      other will display an alert with random integer number between 1 - 10.
+      Modify the exercise so that the button is clickable only once. No alerts
+      are displayed after first click
     </p>
   </body>
 </html>

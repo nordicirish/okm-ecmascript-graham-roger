@@ -47,20 +47,19 @@
         }
         function doIt() {
           // each cell gets the same color
-          // let red = (Math.random() * 255).toFixed(0);
-          // let green = (Math.random() * 255).toFixed(0);
-          // let blue = (Math.random() * 255).toFixed(0);
+          // let red = Math.floor(Math.random() * 256);
+          // let green = Math.floor(Math.random() * 256);
+          // let blue = Math.floor(Math.random() * 256);
           for (let node of elementList) {
             //disco fever
-            let red = (Math.random() * 255).toFixed(0);
-            let green = (Math.random() * 255).toFixed(0);
-            let blue = (Math.random() * 255).toFixed(0);
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
             // loop through elementList array
             node.style.background = `rgb(${red},${green},${blue})`;
             node.style.border = "none";
             node.style.borderRadius = "50%";
             button.innerText = "DISCO FEVER!";
-
             button.style.background = `rgb(${red},${green},${blue})`;
           }
         }

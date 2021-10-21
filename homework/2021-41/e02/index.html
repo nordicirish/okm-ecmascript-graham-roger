@@ -17,8 +17,8 @@
       }
 
       function doIt() {
-        let rNumber1 = (Math.random() * 100).toFixed(0);
-        // toFixed specifies number of zeroes after decimal point
+        let rNumber1 = Math.floor(Math.random() * 100) + 1;
+        // random no between 1 and 100
         alert("Random number is " + rNumber1);
         // redeclare button as it was originally declared within
         // the scope of the ready function

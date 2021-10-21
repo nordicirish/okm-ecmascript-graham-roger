@@ -24,9 +24,9 @@
 
       function ready() {
         //   rgb red green and blue values are 0 - 255
-        let red = (Math.random() * 255).toFixed(0);
-        let green = (Math.random() * 255).toFixed(0);
-        let blue = (Math.random() * 255).toFixed(0);
+        let red = Math.floor(Math.random() * 256);
+        let green = Math.floor(Math.random() * 256);
+        let blue = Math.floor(Math.random() * 256);
         // all td elements in the page
         let elementList = document.querySelectorAll("td");
         // console.log(elementList);

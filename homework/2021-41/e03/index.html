@@ -17,13 +17,13 @@
       }
 
       function doIt1() {
-        let rNumber1 = (Math.random() * 100).toFixed(0);
-        // toFixed specifies number of zeroes after decimal point
+        let rNumber1 = Math.floor(Math.random() * 100) + 1;
+        // random no between 1 and 100
         alert("1st Random number is " + rNumber1);
       }
       function doIt2() {
-        let rNumber2 = (Math.random() * 10).toFixed(0);
-        // toFixed specifies number of zeroes after decimal point
+        let rNumber2 = Math.floor(Math.random() * 10) + 1;
+        // random no between 1 and 10
         alert("2nd Random number is " + rNumber2);
       }
     </script>
