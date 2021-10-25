@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <form>
+      <label for="userName">name:</label><br />
+      <input type="text" id="userName" name="userName" />
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+    <script>
+      let h1 = document.querySelector("h1");
+      let submit = document.getElementById("submit");
+      submit.addEventListener("click", (event) => {
+        event.preventDefault();
+        // default behaviour is to submit the data
+        // and refresh the page which means text entered will flash
+        // and disappear preventDefault() overrides this
+        let name = document.getElementById("userName").value;
+        h1.innerText = name;
+        console.log(name);
+      });
+    </script>
+  </body>
+</html>

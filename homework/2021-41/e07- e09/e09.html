@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>BMI Calculator</h1>
+    <form>
+      <label for="weight">Please enter your weight in kgs: </label>
+      <input type="text" id="weight" name="weight" /><br />
+      <label for="height">Please enter your height in cms: </label>
+      <input type="text" id="height" name="height" /><br />
+      <!-- <input type="submit" id="submit" value="Submit" /> -->
+    </form>
+    <p></p>
+    <script>
+      let p = document.querySelector("p");
+
+      let weightArray = [];
+      let heightArray = [];
+      let weightInput = 1;
+      let heightInput = 1;
+      let bmi;
+      let weight = document.getElementById("weight");
+      let height = document.getElementById("height");
+
+      weight.addEventListener(
+        "keypress",
+        (event) => {
+          if (event.keyCode !== 13) {
+            weightArray.push(event.key);
+            weightInput = weightArray.join("");
+            // concatenates the array values to a single number
+            console.log(weightInput);
+            p.innerText = "Your BMI is ";
+          }
+        },
+        false
+      );
+      console.log(weightInput);
+
+      height.addEventListener(
+        "keypress",
+        (event) => {
+          if (event.keyCode !== 13) {
+            heightArray.push(event.key);
+            heightInput = heightArray.join("");
+            console.log(heightInput);
+          }
+          bmi = weightInput / ((heightInput * heightInput) / 10000);
+          p.innerText = "Your BMI is " + bmi.toFixed(2);
+        },
+        false
+      );
+      console.log(heightInput);
+
+      // let submit = document.getElementById("submit");
+      // submit.addEventListener("click", (event) => {
+      //   event.preventDefault();
+      //   // default behaviour is to submit the data
+      //   // and refresh the page which means text entered will flash
+      //   // and disappear preventDefault() overrides this
+      //   let weight = document.getElementById("weight").value;
+      //   let height = document.getElementById("height").value;
+      //   let bmi = weight / ((height * height) / 10000);
+      //   p.innerText = "BMI is " + bmi.toFixed(2);
+      // });
+    </script>
+  </body>
+</html>
