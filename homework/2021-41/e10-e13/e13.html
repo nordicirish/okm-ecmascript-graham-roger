@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <ul>
       <li>hello</li>
@@ -13,22 +14,41 @@
       <li>hello</li>
       <li>hello</li>
     </ul>
+    <form>
+      <label for="userInput">Write something and click addOne:</label>
+      <input type="text" id="userInput" name="userInput" /><br />
+    </form>
     <button id="addOne">Add one</button><br />
     <button id="removeOne">Remove one</button>
+
     <p>
       Create an application where you have a list (ul li hello li> ul). Create a
       button that will add new li hello li to the list.
     </p>
     <p>Create button that will delete the last list item from the list</p>
+    <p>
+      Create possibility so that user can give the text to be added to the list.
+      Use input - element.
+    </p>
+
     <script>
       let addOne = document.getElementById("addOne");
       addOne.addEventListener("click", (event) => {
+        let userInput = document.getElementById("userInput").value;
         let ul = document.querySelector("ul");
         let li = document.createElement("li");
         // or li.innerHtml
-        li.innerText = "hello";
+        li.innerText = userInput;
         ul.appendChild(li);
       });
+      // let addOne = document.getElementById("addOne");
+      // addOne.addEventListener("click", (event) => {
+      //   let ul = document.querySelector("ul");
+      //   let li = document.createElement("li");
+      //   // or li.innerHtml
+      //   li.innerText = "hello";
+      //   ul.appendChild(li);
+      // });
       let removeOne = document.getElementById("removeOne");
       removeOne.addEventListener("click", (event) => {
         let ul = document.querySelector("ul");
