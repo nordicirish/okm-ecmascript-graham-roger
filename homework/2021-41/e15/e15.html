@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="charId">Character ID: </label>
+      <input type="text" id="charId" name="charID" />
+      <br />
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+    <ul></ul>
+    <script>
+      let submit = document.getElementById("submit");
+      submit.addEventListener("click", (event) => {
+        let id = charId.value;
+        event.preventDefault();
+        fetch(`https://swapi.dev/api/people/${id}`)
+          .then((response) => response.json())
+          //convert to json
+          .then((data) => {
+            console.log(data);
+            let name = data.name;
+            let mass = data.mass;
+            let height = data.height;
+            let ul = document.querySelector("ul");
+            let liName = document.createElement("li");
+            liName.innerHTML = `<h4>${name}</h4>`;
+            ul.appendChild(liName);
+            let liMass = document.createElement("li");
+            // or li.innerHTML
+            liMass.innerText = `Mass: ${mass} kgs`;
+            ul.appendChild(liMass);
+            let liHeight = document.createElement("li");
+            // or li.innerHTML
+            liHeight.innerText = `Height: ${height} cms`;
+            ul.appendChild(liHeight);
+          });
+      });
+    </script>
+  </body>
+</html>
